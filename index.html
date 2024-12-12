@@ -9,8 +9,8 @@
 </head>
 
 <body>
-  <button class="prev">&#10094;</button>
   <section>
+    <button class="prev">&#10094;</button>
     <div class="carousel">
       <div class="carousel-images">
         <img src="./images/image-1.webp" alt="Foto 1">
@@ -20,14 +20,18 @@
         <img src="./images/image-5.webp" alt="Foto 5">
       </div>
     </div>
+    <button class="next">&#10095;</button>
   </section>
-  <button class="next">&#10095;</button>
 
   <main>
     <section class="counter-section">
       <div class="counter" id="counter"></div>
       <p class="highlight-text">... desde que fiz a melhor escolha da minha vida.</p>
+      <button id="play-button">Tocar Música</button>
     </section>
+
+    <audio id="background-music" src="./musicas/ela-e-demais.mp3"></audio>
+    <audio id="background-music" src="./musicas/sonho-de-amor.mp3"></audio>
   </main>
 
   <script src="script.js"></script>
