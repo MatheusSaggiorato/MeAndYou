@@ -56,7 +56,7 @@ function playMusic(audio, startTime, duration, callback) {
 }
 
 document.getElementById("play-button").addEventListener("click", () => {
-    playMusic(music1, 72, 33, () => {
+    playMusic(music1, 73, 33, () => {
         playMusic(music2, 20, 10, () => {
             playMusic(music3, 5, 30, 20)
         })
