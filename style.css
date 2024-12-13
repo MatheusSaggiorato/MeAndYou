@@ -3,18 +3,20 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #ffe4e1, #fff0f5);
-  color: #333;
-  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 section {
   position: relative;
-  overflow: hidden;
   margin: auto;
 }
 
 .carousel {
-  width: 300px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +30,6 @@ section {
   display: flex;
   transition: transform 0.5s ease;
   width: calc(100% * 5);
-  margin-top: 1rem;
 }
 
 .carousel-images img {
@@ -45,12 +46,12 @@ section {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 1rem;
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,33 +59,38 @@ section {
 
 #play-button {
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
   border-radius: 1rem;
   border: none;
-  background-color: crimson;
+  background-color: #b22222;
+}
 
+#play-button:hover {
+  transform: scale(1.05);
 }
 
 button.prev {
-  left: 10px;
+  left: 1rem;
 }
 
 button.next {
-  right: 10px;
+  right: 1rem;
 }
 
 .counter-section {
+  height: auto;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 1rem;
   background: #fffafa;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 800px;
+  margin-bottom: 1rem;
 }
 
 .counter {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #b22222;
 }
@@ -93,4 +99,10 @@ button.next {
   font-size: 1.5rem;
   color: #8b0000;
   font-style: italic;
+}
+
+@media (min-width: 415px) {
+  .carousel {
+    max-width: 17rem;
+  }
 }

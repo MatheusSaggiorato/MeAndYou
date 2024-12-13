@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const music1 = new Audio("./musicas/sonho-de-amor.mp3");
-const music2 = new Audio("./musicas/ela-e-demais.mp3");
-const music3 = new Audio("./musicas/sonho-de-amor.mp3");
+const music2 = new Audio("./musicas/por-voce.mp3");
+const music3 = new Audio("./musicas/heaven.mp3");
 
 function playMusic(audio, startTime, duration, callback) {
     audio.currentTime = startTime;
@@ -57,8 +57,8 @@ function playMusic(audio, startTime, duration, callback) {
 
 document.getElementById("play-button").addEventListener("click", () => {
     playMusic(music1, 73, 33, () => {
-        playMusic(music2, 20, 10, () => {
-            playMusic(music3, 5, 30, 20)
+        playMusic(music2, 5, 115, () => {
+            playMusic(music3, 15, 256)
         })
     })
 })
