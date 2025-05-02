@@ -21,21 +21,48 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCarousel();
     });
 
-    const counterElement = document.getElementById("counter");
-    const counterElement = document.getElementById("counter");
-    const startDate = new Date(2019, 3, 20, 22, 0, 0); // 20/04/2019 22h (Brasília)
+        const counterElement = document.getElementById("counter");
+        const startDate = new Date(2019, 3, 20, 22, 0, 0); // 20/04/2019 22h
 
-    function updateCounter() {
+        function updateCounter() {
         const now = new Date();
-        const elapsedTime = now - startDate;
 
-        const years = Math.floor(elapsedTime / (1000 * 60 * 60 * 24 * 365));
-        const days = Math.floor((elapsedTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
 
-        counterElement.textContent = `${years} anos, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+
+        if (days < 0) {
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+            days += prevMonth;
+            months--;
+        }
+
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        const totalDays = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+
+        counterElement.textContent = `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos (total: ${totalDays} dias)`;
     }
 
     setInterval(updateCounter, 1000);
