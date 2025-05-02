@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const totalDays = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
 
-        counterElement.textContent = `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos (total: ${totalDays} dias)`;
+        counterElement.textContent = `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
     }
 
     setInterval(updateCounter, 1000);
