@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const counterElement = document.getElementById("counter");
-    const startDate = new Date("2019-04-20T23:00:00");
+    const counterElement = document.getElementById("counter");
+    const startDate = new Date(2019, 3, 20, 22, 0, 0); // 20/04/2019 22h (Brasília)
 
     function updateCounter() {
         const now = new Date();
